@@ -22,6 +22,17 @@ int main()
                     position = sf::Vector2f(static_cast<float>(event.mouseButton.x - 100.f), static_cast<float>(event.mouseButton.y - 100.f));
                 }
             }
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space)
+            {
+                if (shape.getFillColor() == sf::Color::Green)
+                {
+                    shape.setFillColor(sf::Color::Red);
+                }
+                else
+                {
+                    shape.setFillColor(sf::Color::Green);
+                }
+            }
         }
         shape.setPosition(position); // Move the shape to the current mouse position
 

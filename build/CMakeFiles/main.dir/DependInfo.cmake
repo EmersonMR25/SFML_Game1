@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/abdiel/Desktop/Games/SFML_Game1/src/game.cpp" "CMakeFiles/main.dir/src/game.cpp.o" "gcc" "CMakeFiles/main.dir/src/game.cpp.o.d"
   "/Users/abdiel/Desktop/Games/SFML_Game1/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/src/main.cpp.o.d"
   )
 

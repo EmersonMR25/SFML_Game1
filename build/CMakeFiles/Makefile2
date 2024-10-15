@@ -201,7 +201,7 @@ CMakeFiles/main.dir/all: _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window
 CMakeFiles/main.dir/all: _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles --progress-num=1 "Built target main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles --progress-num=1,2 "Built target main"
 .PHONY : CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -227,12 +227,12 @@ CMakeFiles/main.dir/clean:
 _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/build.make _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/build.make _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles --progress-num=53,54,55,56,57,58,59,60,61,62,63,64,65,66 "Built target sfml-system"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles --progress-num=54,55,56,57,58,59,60,61,62,63,64,65,66 "Built target sfml-system"
 .PHONY : _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles 0
 .PHONY : _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/rule
@@ -258,7 +258,7 @@ _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/all: _deps/sfml-buil
 
 # Build rule for subdir invocation for target.
 _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles 48
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles 47
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles 0
 .PHONY : _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/rule
@@ -279,7 +279,7 @@ _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/clean:
 _deps/sfml-build/src/SFML/Network/CMakeFiles/sfml-network.dir/all: _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/sfml-build/src/SFML/Network/CMakeFiles/sfml-network.dir/build.make _deps/sfml-build/src/SFML/Network/CMakeFiles/sfml-network.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/sfml-build/src/SFML/Network/CMakeFiles/sfml-network.dir/build.make _deps/sfml-build/src/SFML/Network/CMakeFiles/sfml-network.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles --progress-num=45,46,47,48,49,50,51,52 "Built target sfml-network"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles --progress-num=45,46,47,48,49,50,51,52,53 "Built target sfml-network"
 .PHONY : _deps/sfml-build/src/SFML/Network/CMakeFiles/sfml-network.dir/all
 
 # Build rule for subdir invocation for target.
@@ -311,7 +311,7 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all: _deps/sfml-
 
 # Build rule for subdir invocation for target.
 _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles 73
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles 72
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles 0
 .PHONY : _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/rule
@@ -332,12 +332,12 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/clean:
 _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/build.make _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/build.make _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles --progress-num=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 "Built target sfml-audio"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 "Built target sfml-audio"
 .PHONY : _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles 32
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles 30
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/abdiel/Desktop/Games/SFML_Game1/build/CMakeFiles 0
 .PHONY : _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/rule

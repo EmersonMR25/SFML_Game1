@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/main.dir/src/game.cpp.obj"
+  "CMakeFiles/main.dir/src/game.cpp.obj.d"
   "CMakeFiles/main.dir/src/main.cpp.obj"
   "CMakeFiles/main.dir/src/main.cpp.obj.d"
+  "CMakeFiles/main.dir/src/particle.cpp.obj"
+  "CMakeFiles/main.dir/src/particle.cpp.obj.d"
   "bin/main.exe"
   "bin/main.exe.manifest"
   "bin/main.pdb"

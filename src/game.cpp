@@ -1,8 +1,8 @@
 #include "game.h"
 
-Game::Game() : window(sf::VideoMode(_WIDTH, _HEIGHT), "SFML Game")
+Game::Game() : window(sf::VideoMode(_WIDTH, _HEIGHT), "Gravity Simulator")
 {
-    window.setFramerateLimit(60);
+    this->window.setFramerateLimit(60);
     while (window.isOpen())
     {
         handeEvents();
@@ -17,13 +17,13 @@ Game::~Game()
 
 void Game::handeEvents()
 {
-    while (window.pollEvent(event))
+    while (window.pollEvent(this->event))
     {
-        if (event.type == sf::Event::Closed)
+        if (this->event.type == sf::Event::Closed)
             window.close();
-        if (event.type == sf::Event::KeyPressed)
+        if (this->event.type == sf::Event::KeyPressed)
         {
-            if (event.key.code == sf::Keyboard::Escape)
+            if (this->event.key.code == sf::Keyboard::Escape)
                 window.close();
         }
     }

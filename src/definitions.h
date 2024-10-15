@@ -2,12 +2,7 @@
 #ifndef DEFINITIONS_H
 #define DEFINITIONS_H
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <SFML/Graphics.hpp>
-
-#define _WIDTH 720
-#define _HEIGHT 400
+#define _WIDTH 720.f
+#define _HEIGHT 400.f
 
 #endif // DEFINITIONS_H

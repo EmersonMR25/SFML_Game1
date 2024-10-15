@@ -4,6 +4,7 @@
 #define GAME_H
 
 #include "definitions.h"
+#include <SFML/Graphics.hpp>
 
 class Game
 {

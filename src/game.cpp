@@ -28,7 +28,14 @@ void Game::handeEvents()
         if (this->event.type == sf::Event::KeyPressed)
         {
             if (this->event.key.code == sf::Keyboard::Escape)
+            {
                 window.close();
+            }
+        }
+        if (this->event.type == sf::Event::MouseButtonPressed)
+        {
+            // emplace_back will create a new Particle based on the constructor arguments
+            particles.emplace_back(this->event);
         }
     }
 }

@@ -12,9 +12,10 @@ class Particles
 {
 private:
     sf::CircleShape circle;
+    void setCoordinates(const sf::Event &event);
 
 public:
-    Particles(float x, float y);
+    Particles(const sf::Event &event);
     ~Particles();
     void draw(sf::RenderWindow &window);
 };

@@ -1,34 +1,15 @@
 #include "particles.h"
 
-Particles::Particles(sf::RenderWindow &window, const sf::Event &event)
+Particles::Particles(float x, float y)
 {
-    circle.setFillColor(this->getColor());
-    circle.setRadius(this->getRadius());
-    circle.setPosition(this->getPosition(event));
-    window.draw(this->circle);
-} // Particles::Particles()
+    circle.setRadius(20);
+    circle.setFillColor(sf::Color::White);
+    circle.setPosition(x, y);
+}
 
-Particles::~Particles()
-{
-} // Particles::~Particles()
+Particles::~Particles() {}
 
-sf::Vector2f Particles::getPosition(const sf::Event &event)
+void Particles::draw(sf::RenderWindow &window)
 {
-    return sf::Vector2f(event.mouseMove.x, event.mouseMove.y);
-} // Particles::getPosition()
-
-float Particles::getRadius()
-{
-    std::random_device dev;
-    std::mt19937 rng(dev());
-    std::uniform_int_distribution<float> dist(5.0f, 20.0f);
-    return dist(rng);
-} // Particles::getRadius()
-
-sf::Color Particles::getColor()
-{
-    std::random_device dev;
-    std::mt19937 rng(dev());
-    std::uniform_int_distribution<int> dist(0, 255);
-    return sf::Color(dist(rng), dist(rng), dist(rng));
-} // Particles::getColor()
+    window.draw(circle);
+}

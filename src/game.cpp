@@ -34,8 +34,11 @@ void Game::handeEvents()
         }
         if (this->event.type == sf::Event::MouseButtonPressed)
         {
-            // emplace_back will create a new Particle based on the constructor arguments
-            particles.emplace_back(this->event);
+            if (event.mouseButton.button == sf::Mouse::Left)
+            {
+                // emplace_back will create a new Particle based on the constructor arguments
+                particles.emplace_back(this->event);
+            }
         }
     }
 }

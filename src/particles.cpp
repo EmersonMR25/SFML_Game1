@@ -2,8 +2,9 @@
 
 Particles::Particles(const sf::Event &event)
 {
-    setCoordinates(event);
+    // Initialize random seed
     setRadius();
+    setCoordinates(event);
     setColor();
 }
 
@@ -16,18 +17,19 @@ void Particles::draw(sf::RenderWindow &window)
 
 void Particles::setCoordinates(const sf::Event &event)
 {
-    // check if LM is pressed bc in Mac both of them are connected
-    std::cout << "the right button was pressed" << std::endl;
-    std::cout << "mouse x: " << event.mouseButton.x << std::endl;
-    std::cout << "mouse y: " << event.mouseButton.y << std::endl;
-    this->circle.setPosition(static_cast<float>(event.mouseButton.x - 20.0f), static_cast<float>(event.mouseButton.y - 20.f));
+    // Check if the left mouse button is pressed
+    std::cout << "The mouse button was pressed" << std::endl;
+    std::cout << "Mouse x: " << event.mouseButton.x << std::endl;
+    std::cout << "Mouse y: " << event.mouseButton.y << std::endl;
+    this->circle.setPosition(static_cast<float>(event.mouseButton.x - circle.getRadius()),
+                             static_cast<float>(event.mouseButton.y - circle.getRadius()));
 }
 
 void Particles::setRadius()
 {
-    // Create a random device and seed the random engine
+    // Random device and generator as class members
     std::random_device rd;  // Non-deterministic random device (used to seed the generator)
-    std::mt19937 gen(rd()); // Mersenne Twister engine initialized with seed
+    std::mt19937 gen(rd()); // Mersenne Twister engine (initialized in the constructor)
 
     // Define a uniform integer distribution from 20 to 50
     std::uniform_int_distribution<> distr(20, 50);
@@ -36,11 +38,17 @@ void Particles::setRadius()
 
 void Particles::setColor()
 {
-    // Create a random device and seed the random engine
+    // Random device and generator as class members
     std::random_device rd;  // Non-deterministic random device (used to seed the generator)
-    std::mt19937 gen(rd()); // Mersenne Twister engine initialized with seed
+    std::mt19937 gen(rd()); // Mersenne Twister engine (initialized in the constructor)
 
-    // Define a uniform integer distribution from 20 to 50
-    std::uniform_int_distribution<> distr(0, 250);
+    // Define a uniform integer distribution from 0 to 255 for RGB values
+    std::uniform_int_distribution<> distr(0, 255);
     this->circle.setFillColor(sf::Color(distr(gen), distr(gen), distr(gen)));
+}
+
+void Particles::update()
+{
+    this->circle.move(this->circle.getPosition().x,
+                      this->circle.getPosition().y + 100.f);
 }

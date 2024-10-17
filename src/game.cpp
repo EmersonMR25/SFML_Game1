@@ -10,6 +10,7 @@ Game::Game() : window(sf::VideoMode(_WIDTH, _HEIGHT), "Gravity Simulator")
         for (auto particle : particles)
         {
             particle.draw(window);
+            particle.update();
         }
         window.display();
     }

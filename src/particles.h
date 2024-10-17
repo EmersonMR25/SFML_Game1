@@ -20,6 +20,7 @@ public:
     Particles(const sf::Event &event);
     ~Particles();
     void draw(sf::RenderWindow &window);
+    void update();
 };
 
 #endif // PARTICLES_H

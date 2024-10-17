@@ -13,6 +13,8 @@ class Particles
 private:
     sf::CircleShape circle;
     void setCoordinates(const sf::Event &event);
+    void setColor();
+    void setRadius();
 
 public:
     Particles(const sf::Event &event);

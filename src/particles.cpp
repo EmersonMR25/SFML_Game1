@@ -4,7 +4,7 @@ Particles::Particles(const sf::Event &event)
 {
     setCoordinates(event);
     setRadius();
-    this->circle.setFillColor(sf::Color::Red);
+    setColor();
 }
 
 Particles::~Particles() {}
@@ -32,4 +32,15 @@ void Particles::setRadius()
     // Define a uniform integer distribution from 20 to 50
     std::uniform_int_distribution<> distr(20, 50);
     this->circle.setRadius(static_cast<float>(distr(gen)));
+}
+
+void Particles::setColor()
+{
+    // Create a random device and seed the random engine
+    std::random_device rd;  // Non-deterministic random device (used to seed the generator)
+    std::mt19937 gen(rd()); // Mersenne Twister engine initialized with seed
+
+    // Define a uniform integer distribution from 20 to 50
+    std::uniform_int_distribution<> distr(0, 250);
+    this->circle.setFillColor(sf::Color(distr(gen), distr(gen), distr(gen)));
 }

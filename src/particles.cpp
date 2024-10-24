@@ -6,6 +6,7 @@ Particles::Particles(const sf::Event &event)
     setRadius();
     setCoordinates(event);
     setColor();
+    velocity = sf::Vector2f(1.0f, 0.0f);
 }
 
 Particles::~Particles() {}
@@ -49,6 +50,6 @@ void Particles::setColor()
 
 void Particles::update()
 {
-    this->circle.move(this->circle.getPosition().x,
-                      this->circle.getPosition().y + 100.f);
+    // Move the particle according to its velocity
+    circle.move(velocity);
 }

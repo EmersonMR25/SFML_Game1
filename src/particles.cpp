@@ -6,7 +6,7 @@ Particles::Particles(const sf::Event &event)
     setRadius();
     setCoordinates(event);
     setColor();
-    velocity = sf::Vector2f(1.0f, 0.0f);
+    velocity = sf::Vector2f(5.0f, 5.0f);
 }
 
 Particles::~Particles() {}
@@ -50,6 +50,15 @@ void Particles::setColor()
 
 void Particles::update()
 {
+    // Check the bounds of the particle relative to the screen
+    if (circle.getPosition().x < 0 || circle.getPosition().x + (2 * circle.getRadius()) > _WIDTH)
+    {
+        velocity.x *= -1;
+    }
+    if (circle.getPosition().y < 0 || circle.getPosition().y + (2 * circle.getRadius()) > _HEIGHT)
+    {
+        velocity.y *= -1;
+    }
     // Move the particle according to its velocity
     circle.move(velocity);
 }

@@ -6,7 +6,8 @@ Particles::Particles(const sf::Event &event)
     setRadius();
     setCoordinates(event);
     setColor();
-    velocity = sf::Vector2f(5.0f, 5.0f);
+    weight = static_cast<float>(circle.getRadius()) / 100.0f;       // Weight is proportional to the radius
+    velocity = sf::Vector2f(0.0f, (weight * GRAVITY_ACCELERATION)); // Velocity
 }
 
 Particles::~Particles() {}
@@ -59,6 +60,7 @@ void Particles::update()
     {
         velocity.y *= -1;
     }
+    velocity.y += GRAVITY_ACCELERATION * 1.0f;
     // Move the particle according to its velocity
-    circle.move(velocity);
+    circle.move(velocity * 1.0f);
 }

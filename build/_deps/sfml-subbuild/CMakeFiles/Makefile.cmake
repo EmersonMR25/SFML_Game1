@@ -10,10 +10,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.30.4/CMakeSystem.cmake"
   "CMakeLists.txt"
   "sfml-populate-prefix/tmp/sfml-populate-mkdirs.cmake"
-  "/opt/homebrew/Cellar/cmake/3.30.4/share/cmake/Modules/CMakeDetermineSystem.cmake"
   "/opt/homebrew/Cellar/cmake/3.30.4/share/cmake/Modules/CMakeGenericSystem.cmake"
   "/opt/homebrew/Cellar/cmake/3.30.4/share/cmake/Modules/CMakeInitializeConfigs.cmake"
-  "/opt/homebrew/Cellar/cmake/3.30.4/share/cmake/Modules/CMakeSystem.cmake.in"
   "/opt/homebrew/Cellar/cmake/3.30.4/share/cmake/Modules/CMakeSystemSpecificInformation.cmake"
   "/opt/homebrew/Cellar/cmake/3.30.4/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake"
   "/opt/homebrew/Cellar/cmake/3.30.4/share/cmake/Modules/ExternalProject.cmake"
@@ -38,7 +36,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "CMakeFiles/3.30.4/CMakeSystem.cmake"
   "sfml-populate-prefix/tmp/sfml-populate-mkdirs.cmake"
   "sfml-populate-prefix/tmp/sfml-populate-gitclone.cmake"
   "sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-gitinfo.txt"

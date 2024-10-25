@@ -8,6 +8,7 @@
 #include <vector>
 #include "particles.h"
 #include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
 
 class Game
 {

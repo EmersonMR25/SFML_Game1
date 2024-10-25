@@ -5,6 +5,7 @@ Game::Game() : window(sf::VideoMode(_WIDTH, _HEIGHT), "Gravity Simulator")
     this->window.setFramerateLimit(60);
     while (window.isOpen())
     {
+
         handeEvents();
         window.clear();
         for (auto &particle : particles)

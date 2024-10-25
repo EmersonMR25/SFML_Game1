@@ -24,7 +24,7 @@ file(GLOB_RECURSE SOURCES src/*.cpp)
 add_executable(main ${SOURCES})
 
 # Link SFML libraries
-target_link_libraries(main PRIVATE sfml-graphics)
+target_link_libraries(main PRIVATE sfml-graphics sfml-system)
 target_compile_features(main PRIVATE cxx_std_17)
 
 # Windows-specific settings to copy OpenAL DLL

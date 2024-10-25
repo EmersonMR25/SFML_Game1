@@ -125,6 +125,7 @@ bin/main: CMakeFiles/main.dir/src/main.cpp.o
 bin/main: CMakeFiles/main.dir/src/particles.cpp.o
 bin/main: CMakeFiles/main.dir/build.make
 bin/main: _deps/sfml-build/lib/libsfml-graphics.a
+bin/main: _deps/sfml-build/lib/libsfml-system.a
 bin/main: _deps/sfml-build/lib/libsfml-window.a
 bin/main: _deps/sfml-build/lib/libsfml-system.a
 bin/main: CMakeFiles/main.dir/link.txt

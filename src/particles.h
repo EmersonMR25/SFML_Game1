@@ -13,6 +13,7 @@ class Particles
 private:
     sf::CircleShape circle;
     sf::Vector2f velocity;
+    float weight;
     void setCoordinates(const sf::Event &event);
     void setColor();
     void setRadius();

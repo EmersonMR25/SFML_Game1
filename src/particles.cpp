@@ -6,8 +6,8 @@ Particles::Particles(const sf::Event &event)
     setRandomRadius();
     setCoordinates(event);
     setRandomColor();
-    this->_weight;
-    this->_velocity;
+    this->_weight = 0;
+    this->_velocity = sf::Vector2f(1.0f, 1.0f);
 }
 
 Particles::~Particles() {}
@@ -22,24 +22,37 @@ void Particles::setCoordinates(const sf::Event &event)
     std::cout << "The mouse button was pressed" << std::endl;
     std::cout << "Mouse x: " << event.mouseButton.x << std::endl;
     std::cout << "Mouse y: " << event.mouseButton.y << std::endl;
-    this->_circle.setPosition(static_cast<float>(event.mouseButton.x - _circle.getRadius()),
-                              static_cast<float>(event.mouseButton.y - _circle.getRadius()));
+    float yCoordinates = event.mouseButton.y;
+    float xCoordinates = event.mouseButton.x;
+    if (xCoordinates - _circle.getRadius() < 0)
+    {
+        xCoordinates = 0.0f + _circle.getRadius();
+    }
+    if (xCoordinates + _circle.getRadius() > _WIDTH)
+    {
+        xCoordinates = _WIDTH - _circle.getRadius();
+    }
+    if (yCoordinates - _circle.getRadius() < 0)
+    {
+        yCoordinates = 0.0f + _circle.getRadius();
+    }
+    if (yCoordinates + _circle.getRadius() > _HEIGHT)
+    {
+        yCoordinates = _HEIGHT - _circle.getRadius();
+    }
+    this->_circle.setPosition(xCoordinates - _circle.getRadius(), yCoordinates - _circle.getRadius());
 }
 
 void Particles::setRandomRadius()
 {
-    // Random device and generator as class members
-    std::random_device rd;  // Non-deterministic random device (used to seed the generator)
-    std::mt19937 gen(rd()); // Mersenne Twister engine (initialized in the constructor)
+    std::mt19937 gen(static_cast<unsigned int>(std::time(nullptr)));
     std::uniform_int_distribution<> distr(_MIN_RADIUS, _MAX_RADIUS);
     this->_circle.setRadius(static_cast<float>(distr(gen)));
 }
 
 void Particles::setRandomColor()
 {
-    // Random device and generator as class members
-    std::random_device rd;  // Non-deterministic random device (used to seed the generator)
-    std::mt19937 gen(rd()); // Mersenne Twister engine (initialized in the constructor)
+    std::mt19937 gen(static_cast<unsigned int>(std::time(nullptr)));
     std::uniform_int_distribution<> distr(_MIN_RGB, _MAX_RGB);
     this->_circle.setFillColor(sf::Color(distr(gen), distr(gen), distr(gen)));
 }
@@ -55,7 +68,6 @@ void Particles::update()
     {
         _velocity.y *= -1;
     }
-    _velocity.y += _GRAVITY_ACCELERATION * 1.0f;
     // Move the particle according to its velocity
-    _circle.move(_velocity * 1.0f);
+    _circle.move(_velocity);
 }

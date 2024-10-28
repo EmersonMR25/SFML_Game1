@@ -4,6 +4,5 @@
 
 #define _WIDTH 720.f
 #define _HEIGHT 400.f
-#define _GRAVITY_ACCELERATION 9.8f // Constant acceleration
 
 #endif // DEFINITIONS_H

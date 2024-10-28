@@ -6,12 +6,14 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <random>
+#include <ctime>
 #include "definitions.h"
 
 #define _MAX_RADIUS 50.0f
 #define _MIN_RADIUS 20.0f
 #define _MIN_RGB 0.0f
 #define _MAX_RGB 255.0f
+#define _GRAVITY_ACCELERATION 9.8f // Constant acceleration
 
 class Particles
 {

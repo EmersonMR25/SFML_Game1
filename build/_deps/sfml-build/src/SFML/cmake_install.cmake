@@ -1,8 +1,8 @@
-# Install script for directory: /Users/abdiel/Desktop/Games/SFML_Game1/build/_deps/sfml-src/src/SFML
+# Install script for directory: E:/PROJECTS/SFML_Game1/build/_deps/sfml-src/src/SFML
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/SFML_Game")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,16 +34,23 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "C:/MinGW/bin/objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/abdiel/Desktop/Games/SFML_Game1/build/_deps/sfml-build/src/SFML/System/cmake_install.cmake")
-  include("/Users/abdiel/Desktop/Games/SFML_Game1/build/_deps/sfml-build/src/SFML/Window/cmake_install.cmake")
-  include("/Users/abdiel/Desktop/Games/SFML_Game1/build/_deps/sfml-build/src/SFML/Network/cmake_install.cmake")
-  include("/Users/abdiel/Desktop/Games/SFML_Game1/build/_deps/sfml-build/src/SFML/Graphics/cmake_install.cmake")
-  include("/Users/abdiel/Desktop/Games/SFML_Game1/build/_deps/sfml-build/src/SFML/Audio/cmake_install.cmake")
+  include("E:/PROJECTS/SFML_Game1/build/_deps/sfml-build/src/SFML/System/cmake_install.cmake")
+  include("E:/PROJECTS/SFML_Game1/build/_deps/sfml-build/src/SFML/Main/cmake_install.cmake")
+  include("E:/PROJECTS/SFML_Game1/build/_deps/sfml-build/src/SFML/Window/cmake_install.cmake")
+  include("E:/PROJECTS/SFML_Game1/build/_deps/sfml-build/src/SFML/Network/cmake_install.cmake")
+  include("E:/PROJECTS/SFML_Game1/build/_deps/sfml-build/src/SFML/Graphics/cmake_install.cmake")
+  include("E:/PROJECTS/SFML_Game1/build/_deps/sfml-build/src/SFML/Audio/cmake_install.cmake")
 
 endif()
 
+string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
+       "${CMAKE_INSTALL_MANIFEST_FILES}")
+if(CMAKE_INSTALL_LOCAL_ONLY)
+  file(WRITE "E:/PROJECTS/SFML_Game1/build/_deps/sfml-build/src/SFML/install_local_manifest.txt"
+     "${CMAKE_INSTALL_MANIFEST_CONTENT}")
+endif()

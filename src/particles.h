@@ -8,15 +8,20 @@
 #include <random>
 #include "definitions.h"
 
+#define _MAX_RADIUS 50.0f
+#define _MIN_RADIUS 20.0f
+#define _MIN_RGB 0.0f
+#define _MAX_RGB 255.0f
+
 class Particles
 {
 private:
-    sf::CircleShape circle;
-    sf::Vector2f velocity;
-    float weight;
+    sf::CircleShape _circle;
+    sf::Vector2f _velocity;
+    float _weight;
     void setCoordinates(const sf::Event &event);
-    void setColor();
-    void setRadius();
+    void setRandomColor();
+    void setRandomRadius();
 
 public:
     Particles(const sf::Event &event);

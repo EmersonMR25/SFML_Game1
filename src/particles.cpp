@@ -6,8 +6,10 @@ Particles::Particles(const sf::Event &event)
     setRandomRadius();
     setCoordinates(event);
     setRandomColor();
-    this->_weight = 0;
+    this->_mass = 0;
     this->_velocity = sf::Vector2f(1.0f, 1.0f);
+    this->_centerPostion = sf::Vector2f(_circle.getPosition().x + _circle.getRadius(),
+                                        _circle.getPosition().y + _circle.getRadius());
 }
 
 Particles::~Particles() {}
@@ -60,6 +62,14 @@ void Particles::setRandomColor()
 void Particles::update()
 {
     // Check the bounds of the particle relative to the screen
+    checkBounds();
+    // Move the particle according to its velocity
+    _circle.move(_velocity);
+}
+
+void Particles::checkBounds()
+{
+    // Check the bounds of the particle relative to the screen
     if (_circle.getPosition().x < 0 || _circle.getPosition().x + (2 * _circle.getRadius()) > _WIDTH)
     {
         _velocity.x *= -1;
@@ -68,6 +78,4 @@ void Particles::update()
     {
         _velocity.y *= -1;
     }
-    // Move the particle according to its velocity
-    _circle.move(_velocity);
 }

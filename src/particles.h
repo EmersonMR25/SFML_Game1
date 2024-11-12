@@ -20,10 +20,12 @@ class Particles
 private:
     sf::CircleShape _circle;
     sf::Vector2f _velocity;
-    float _weight;
+    sf::Vector2f _centerPostion;
+    float _mass;
     void setCoordinates(const sf::Event &event);
     void setRandomColor();
     void setRandomRadius();
+    void checkBounds();
 
 public:
     Particles(const sf::Event &event);

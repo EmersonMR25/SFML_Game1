@@ -6,6 +6,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <random>
+#include <cstdlib>
 #include <ctime>
 #include "definitions.h"
 
@@ -32,6 +33,7 @@ public:
     ~Particles();
     void draw(sf::RenderWindow &window);
     void update();
+    void detectCollision(const Particles &other);
 };
 
 #endif // PARTICLES_H

@@ -65,6 +65,8 @@ void Particles::update()
     checkBounds();
     // Move the particle according to its velocity
     _circle.move(_velocity);
+    this->_centerPostion = sf::Vector2f(_circle.getPosition().x + _circle.getRadius(),
+                                        _circle.getPosition().y + _circle.getRadius());
 }
 
 void Particles::checkBounds()
@@ -77,5 +79,19 @@ void Particles::checkBounds()
     if (_circle.getPosition().y < 0 || _circle.getPosition().y + (2 * _circle.getRadius()) > _HEIGHT)
     {
         _velocity.y *= -1;
+    }
+}
+
+void Particles::detectCollision(const Particles &other)
+{
+    // Calculate the distance between the two particles
+    float xDistance = abs(_centerPostion.x - other._centerPostion.x);
+    float yDistance = abs(_centerPostion.y - other._centerPostion.y);
+    // Calculate the distance between // i.r hypotenuse
+    float hypotenuseDistance = sqrt(xDistance * xDistance + yDistance * yDistance);
+    // Check if the particles are close enough to collide
+    if (hypotenuseDistance < (_circle.getRadius() + other._circle.getRadius()))
+    {
+        std::cout << "True" << std::endl;
     }
 }

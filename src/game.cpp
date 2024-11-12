@@ -3,16 +3,36 @@
 Game::Game() : window(sf::VideoMode(_WIDTH, _HEIGHT), "Gravity Simulator")
 {
     this->window.setFramerateLimit(60);
+
     while (window.isOpen())
     {
-
         handeEvents();
+
+        // Clear the window at the beginning of each frame
         window.clear();
+
+        // Update particle positions and check for collisions
         for (auto &particle : particles)
         {
-            particle.update();
+            particle.update(); // Update position
+        }
+
+        // Collision detection between particles
+        for (size_t i = 0; i < particles.size(); ++i)
+        {
+            for (size_t j = i + 1; j < particles.size(); ++j)
+            {
+                particles[i].detectCollision(particles[j]);
+            }
+        }
+
+        // Draw particles after updating and checking collisions
+        for (auto &particle : particles)
+        {
             particle.draw(window);
         }
+
+        // Display everything on the window
         window.display();
     }
 }

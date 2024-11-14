@@ -27,6 +27,7 @@ private:
     void setRandomColor();
     void setRandomRadius();
     void checkBounds();
+    void calculatePrimeVelocity(const Particles &other);
 
 public:
     Particles(const sf::Event &event);

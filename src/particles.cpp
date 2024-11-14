@@ -6,7 +6,7 @@ Particles::Particles(const sf::Event &event)
     setRandomRadius();
     setCoordinates(event);
     setRandomColor();
-    this->_mass = 0;
+    this->_mass = 50.0f;
     this->_velocity = sf::Vector2f(1.0f, 1.0f);
     this->_centerPostion = sf::Vector2f(_circle.getPosition().x + _circle.getRadius(),
                                         _circle.getPosition().y + _circle.getRadius());
@@ -92,6 +92,29 @@ void Particles::detectCollision(const Particles &other)
     // Check if the particles are close enough to collide
     if (hypotenuseDistance < (_circle.getRadius() + other._circle.getRadius()))
     {
-        std::cout << "True" << std::endl;
+        calculatePrimeVelocity(other);
     }
+}
+
+void Particles::calculatePrimeVelocity(const Particles &other)
+{
+    // Calculate the difference in position and velocity
+    sf::Vector2f deltaPos = other._circle.getPosition() - _circle.getPosition();
+    sf::Vector2f deltaVel = other._velocity - _velocity;
+
+    // Calculate the distance squared between the two particles (|x2 - x1|^2)
+    float distanceSquared = deltaPos.x * deltaPos.x + deltaPos.y * deltaPos.y;
+
+    // Check if distance squared is not zero to avoid division by zero
+    if (distanceSquared == 0.0f)
+        return;
+
+    // Calculate the scalar part of the formula (2 * m2 / (m1 + m2)) * ((v2 - v1) • (x2 - x1)) / |x2 - x1|^2
+    float massFactor = (2 * other._mass) / (_mass + other._mass);
+    float dotProduct = (deltaVel.x * deltaPos.x + deltaVel.y * deltaPos.y);
+    float scalar = massFactor * (dotProduct / distanceSquared);
+
+    // Update the velocity components (v1')
+    _velocity.x += scalar * deltaPos.x;
+    _velocity.y += scalar * deltaPos.y;
 }

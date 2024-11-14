@@ -1,14 +1,12 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/main.dir/src/game.cpp.obj"
-  "CMakeFiles/main.dir/src/game.cpp.obj.d"
-  "CMakeFiles/main.dir/src/main.cpp.obj"
-  "CMakeFiles/main.dir/src/main.cpp.obj.d"
-  "CMakeFiles/main.dir/src/particles.cpp.obj"
-  "CMakeFiles/main.dir/src/particles.cpp.obj.d"
-  "bin/main.exe"
-  "bin/main.exe.manifest"
+  "CMakeFiles/main.dir/src/game.cpp.o"
+  "CMakeFiles/main.dir/src/game.cpp.o.d"
+  "CMakeFiles/main.dir/src/main.cpp.o"
+  "CMakeFiles/main.dir/src/main.cpp.o.d"
+  "CMakeFiles/main.dir/src/particles.cpp.o"
+  "CMakeFiles/main.dir/src/particles.cpp.o.d"
+  "bin/main"
   "bin/main.pdb"
-  "libmain.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

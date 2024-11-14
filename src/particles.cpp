@@ -8,8 +8,6 @@ Particles::Particles(const sf::Event &event)
     setRandomColor();
     this->_mass = 50.0f;
     this->_velocity = sf::Vector2f(1.0f, 1.0f);
-    this->_centerPosition = sf::Vector2f(_circle.getPosition().x + _circle.getRadius(),
-                                         _circle.getPosition().y + _circle.getRadius());
 }
 
 Particles::~Particles() {}

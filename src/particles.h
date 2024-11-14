@@ -21,20 +21,20 @@ class Particles
 private:
     sf::CircleShape _circle;
     sf::Vector2f _velocity;
-    sf::Vector2f _centerPostion;
+    sf::Vector2f _centerPosition;
     float _mass;
     void setCoordinates(const sf::Event &event);
     void setRandomColor();
     void setRandomRadius();
     void checkBounds();
-    void calculatePrimeVelocity(const Particles &other);
+    void calculatePrimeVelocity(Particles &other);
 
 public:
     Particles(const sf::Event &event);
     ~Particles();
     void draw(sf::RenderWindow &window);
     void update();
-    void detectCollision(const Particles &other);
+    void detectCollision(Particles &other);
 };
 
 #endif // PARTICLES_H

@@ -95,23 +95,43 @@ void Particles::detectCollision(Particles &other)
 
 void Particles::calculatePrimeVelocity(Particles &other)
 {
-    // Calculate the difference in position and velocity
-    sf::Vector2f deltaPos = getCenterPosition(*this) - getCenterPosition(other);
-    sf::Vector2f deltaVel = this->_velocity - other._velocity;
+    sf::Vector2f impactVector = getCenterPosition(other) - getCenterPosition(*this);
+    float d = std::sqrt(impactVector.x * impactVector.x + impactVector.y * impactVector.y);
 
-    // Calculate the distance squared to avoid division by zero
-    float distanceSquared = deltaPos.x * deltaPos.x + deltaPos.y * deltaPos.y;
-    if (distanceSquared == 0.0f)
-        return;
+    if (d < _circle.getRadius() + other._circle.getRadius())
+    {
+        // Push the particles out so that they are not overlapping
+        float overlap = d - (_circle.getRadius() + other._circle.getRadius());
+        sf::Vector2f dir = impactVector;
+        dir.x /= d;
+        dir.y /= d;
+        dir *= overlap * 0.5f;
+        _circle.move(dir);
+        other._circle.move(-dir);
 
-    // Scalar calculation for velocity update
-    float massFactor = (2.0f * other._mass) / (this->_mass + other._mass);
-    float dotProduct = (deltaVel.x * deltaPos.x + deltaVel.y * deltaPos.y);
-    float scalar = massFactor * (dotProduct / distanceSquared);
+        // Correct the distance
+        d = _circle.getRadius() + other._circle.getRadius();
+        impactVector.x /= d;
+        impactVector.y /= d;
+        impactVector *= d;
 
-    // Update the velocities for elastic collision
-    this->_velocity += scalar * deltaPos;
-    other._velocity -= scalar * deltaPos;
+        float mSum = _mass + other._mass;
+        sf::Vector2f vDiff = other._velocity - _velocity;
+
+        // Particle A (this)
+        float num = vDiff.x * impactVector.x + vDiff.y * impactVector.y;
+        float den = mSum * d * d;
+        sf::Vector2f deltaVA = impactVector;
+        deltaVA.x *= 2.0f * other._mass * num / den;
+        deltaVA.y *= 2.0f * other._mass * num / den;
+        _velocity += deltaVA;
+
+        // Particle B (other)
+        sf::Vector2f deltaVB = impactVector;
+        deltaVB.x *= -2.0f * _mass * num / den;
+        deltaVB.y *= -2.0f * _mass * num / den;
+        other._velocity += deltaVB;
+    }
 }
 
 sf::Vector2f Particles::getCenterPosition(const Particles &obj) const

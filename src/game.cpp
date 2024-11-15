@@ -28,7 +28,7 @@ Game::Game()
         {
             for (size_t j = i + 1; j < particles.size(); ++j)
             {
-                // particles[i].detectCollision(particles[j]);
+                particles[i].detectCollision(particles[j]);
             }
         }
 

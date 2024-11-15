@@ -78,37 +78,44 @@ void Particles::checkBounds()
     }
 }
 
-// void Particles::detectCollision(Particles &other)
-//{
-//     // Calculate the distance between the two particles
-//     sf::Vector2f deltaPos = other._centerPosition - this->_centerPosition;
-//     float distance = sqrt(deltaPos.x * deltaPos.x + deltaPos.y * deltaPos.y);
-//
-//     // Check if the particles are close enough to collide
-//     if (distance < 5 + (_circle.getRadius() + other._circle.getRadius()))
-//     {
-//         // Update the velocities of both particles
-//         this->calculatePrimeVelocity(other);
-//         other.calculatePrimeVelocity(*this); // Update the other particle as well
-//     }
-// }
-//
-// void Particles::calculatePrimeVelocity(Particles &other)
-//{
-//     // Calculate the difference in position and velocity
-//     sf::Vector2f deltaPos = other._centerPosition - this->_centerPosition;
-//     sf::Vector2f deltaVel = other._velocity - this->_velocity;
-//
-//     // Calculate the distance squared to avoid division by zero
-//     float distanceSquared = deltaPos.x * deltaPos.x + deltaPos.y * deltaPos.y;
-//     if (distanceSquared == 0.0f)
-//         return;
-//
-//     // Scalar calculation for velocity update
-//     float massFactor = (2 * other._mass) / (this->_mass + other._mass);
-//     float dotProduct = (deltaVel.x * deltaPos.x + deltaVel.y * deltaPos.y);
-//     float scalar = massFactor * (dotProduct / distanceSquared);
-//
-//     // Update the velocities for elastic collision
-//     this->_velocity += scalar * deltaPos;
-// }
+void Particles::detectCollision(Particles &other)
+{
+
+    // Calculate the distance between the two particles
+    sf::Vector2f deltaPos = getCenterPosition(*this) - getCenterPosition(other);
+    float distance = sqrt(deltaPos.x * deltaPos.x + deltaPos.y * deltaPos.y);
+
+    // Check if the particles are close enough to collide
+    if (distance < (_circle.getRadius() + other._circle.getRadius()))
+    {
+        // Update the velocities of both particles
+        this->calculatePrimeVelocity(other);
+    }
+}
+
+void Particles::calculatePrimeVelocity(Particles &other)
+{
+    // Calculate the difference in position and velocity
+    sf::Vector2f deltaPos = getCenterPosition(*this) - getCenterPosition(other);
+    sf::Vector2f deltaVel = this->_velocity - other._velocity;
+
+    // Calculate the distance squared to avoid division by zero
+    float distanceSquared = deltaPos.x * deltaPos.x + deltaPos.y * deltaPos.y;
+    if (distanceSquared == 0.0f)
+        return;
+
+    // Scalar calculation for velocity update
+    float massFactor = (2.0f * other._mass) / (this->_mass + other._mass);
+    float dotProduct = (deltaVel.x * deltaPos.x + deltaVel.y * deltaPos.y);
+    float scalar = massFactor * (dotProduct / distanceSquared);
+
+    // Update the velocities for elastic collision
+    this->_velocity += scalar * deltaPos;
+    other._velocity -= scalar * deltaPos;
+}
+
+sf::Vector2f Particles::getCenterPosition(const Particles &obj) const
+{
+    return sf::Vector2f(obj._circle.getPosition().x + obj._circle.getRadius(),
+                        obj._circle.getPosition().y + obj._circle.getRadius());
+}

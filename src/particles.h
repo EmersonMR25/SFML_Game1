@@ -17,8 +17,8 @@
 #define _MAX_RGB 255
 #define _MAX_MASS 100
 #define _MIN_MASS 10
-#define _MAX_VELOCITY 5
-#define _MIN_VELOCITY -5
+#define _MAX_VELOCITY 1
+#define _MIN_VELOCITY -1
 
 class Particles
 {
@@ -40,6 +40,7 @@ public:
     void draw(sf::RenderWindow &window);
     void update();
     void detectCollision(Particles &other);
+    sf::Vector2f getCenterPosition(const Particles &obj) const;
 };
 
 #endif // PARTICLES_H

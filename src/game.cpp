@@ -22,7 +22,7 @@ Game::Game() : window(sf::VideoMode(_WIDTH, _HEIGHT), "Gravity Simulator")
         {
             for (size_t j = i + 1; j < particles.size(); ++j)
             {
-                particles[i].detectCollision(particles[j]);
+                // particles[i].detectCollision(particles[j]);
             }
         }
 

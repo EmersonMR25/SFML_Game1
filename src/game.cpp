@@ -1,12 +1,18 @@
 #include "game.h"
 
-Game::Game() : window(sf::VideoMode(_WIDTH, _HEIGHT), "Gravity Simulator")
+Game::Game()
 {
-    this->window.setFramerateLimit(60);
+    // Define anti-aliasing settings
+    sf::ContextSettings settings;
+    settings.antialiasingLevel = 8;
+
+    // Initialize the window with anti-aliasing settings
+    window.create(sf::VideoMode(_WIDTH, _HEIGHT), "Gravity Simulator", sf::Style::Default, settings);
+    window.setFramerateLimit(120);
 
     while (window.isOpen())
     {
-        handeEvents();
+        handleEvents();
 
         // Clear the window at the beginning of each frame
         window.clear();
@@ -41,7 +47,7 @@ Game::~Game()
 {
 }
 
-void Game::handeEvents()
+void Game::handleEvents()
 {
     while (window.pollEvent(this->event))
     {

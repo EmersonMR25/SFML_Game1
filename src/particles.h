@@ -18,7 +18,7 @@
 #define _MAX_MASS 100
 #define _MIN_MASS 10
 #define _MAX_VELOCITY 5
-#define _MIN_VELOCITY 1
+#define _MIN_VELOCITY -5
 
 class Particles
 {

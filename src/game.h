@@ -16,7 +16,7 @@ private:
     sf::RenderWindow window;
     sf::Event event;
     std::vector<Particles> particles;
-    void handeEvents();
+    void handleEvents();
 
 public:
     Game();

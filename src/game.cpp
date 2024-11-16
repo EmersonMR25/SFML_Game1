@@ -2,27 +2,21 @@
 
 Game::Game()
 {
-    // Define anti-aliasing settings
     sf::ContextSettings settings;
     settings.antialiasingLevel = 8;
 
-    // Initialize the window with anti-aliasing settings
-    window.create(sf::VideoMode(_WIDTH, _HEIGHT), "Gravity Simulator", sf::Style::Default, settings);
+    window.create(sf::VideoMode(_WIDTH, _HEIGHT), "Ellastic Collision Simulator", sf::Style::Default, settings);
     window.setFramerateLimit(120);
 
     while (window.isOpen())
     {
         handleEvents();
-
-        // Clear the window at the beginning of each frame
         window.clear();
 
-        // Update particle positions and check for collisions
         for (auto &particle : particles)
         {
-            particle.update(); // Update position
+            particle.update();
         }
-
         // Collision detection between particles
         for (size_t i = 0; i < particles.size(); ++i)
         {
@@ -31,21 +25,18 @@ Game::Game()
                 particles[i].detectCollision(particles[j]);
             }
         }
-
         // Draw particles after updating and checking collisions
         for (auto &particle : particles)
         {
             particle.draw(window);
         }
-
-        // Display everything on the window
         window.display();
     }
-}
+} // Game::Game()
 
 Game::~Game()
 {
-}
+} // Game::~Game()
 
 void Game::handleEvents()
 {
@@ -69,4 +60,4 @@ void Game::handleEvents()
             }
         }
     }
-}
+} // Game::handleEvents()

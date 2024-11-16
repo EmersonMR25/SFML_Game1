@@ -6,9 +6,9 @@ CXX_DEFINES = -DFLAC__NO_DLL -DOV_EXCLUDE_STATIC_CALLBACKS -DSFML_STATIC
 
 CXX_INCLUDES = -I/Users/abdiel/Desktop/Games/SFML_Game1/build/_deps/sfml-src/src -isystem /Users/abdiel/Desktop/Games/SFML_Game1/build/_deps/sfml-src/include -isystem /Users/abdiel/Desktop/Games/SFML_Game1/build/_deps/sfml-src/extlibs/headers/minimp3 -isystem /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/OpenAL.framework/Headers -isystem /Users/abdiel/Desktop/Games/SFML_Game1/build/_deps/sfml-src/extlibs/headers
 
-CXX_FLAGSarm64 =  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -mmacosx-version-min=14.5 -F/Users/abdiel/Desktop/Games/SFML_Game1/build/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden
+CXX_FLAGSarm64 = -std=c++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -mmacosx-version-min=14.5 -F/Users/abdiel/Desktop/Games/SFML_Game1/build/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden
 
-CXX_FLAGS =  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -mmacosx-version-min=14.5 -F/Users/abdiel/Desktop/Games/SFML_Game1/build/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden
+CXX_FLAGS = -std=c++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -mmacosx-version-min=14.5 -F/Users/abdiel/Desktop/Games/SFML_Game1/build/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden
 
 # Custom flags: _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/ALCheck.cpp.o_FLAGS =  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
 

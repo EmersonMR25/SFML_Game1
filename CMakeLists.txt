@@ -4,6 +4,11 @@ project(SFML_Game LANGUAGES CXX)
 # Set output directory for the binary
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
+# Explicitly set C++17 as the standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 # Option to build shared libraries (if needed)
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 
@@ -17,7 +22,7 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
-# Collect all source files (in the future you can add more here)
+# Collect all source files
 file(GLOB_RECURSE SOURCES src/*.cpp)
 
 # Create the executable
@@ -25,7 +30,6 @@ add_executable(main ${SOURCES})
 
 # Link SFML libraries
 target_link_libraries(main PRIVATE sfml-graphics sfml-system)
-target_compile_features(main PRIVATE cxx_std_17)
 
 # Windows-specific settings to copy OpenAL DLL
 if(WIN32)

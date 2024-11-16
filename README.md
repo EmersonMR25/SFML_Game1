@@ -39,7 +39,7 @@ A real-time 2D particle physics simulation built using SFML. The program simulat
 2. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/particle-physics-simulation.git
-   cd particle-physics-simulation
+   cd g
    ```
 
 3. Create and enter build directory:
